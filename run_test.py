@@ -29,10 +29,13 @@ for n in nums:
     except Exception:
         continue
 
+print(f"{len(nums)} numbers found!")
+
 ref_xs = list(range(1, 10))
 ref_ys = [math.log10(1 + (1/x)) for x in range(1, 10)]
 dat_ys = [bins[x]/len(nums) for x in range(1, 10)]
 
 plt.plot(ref_xs, ref_ys, label="reference")
 plt.plot(ref_xs, dat_ys, label="data")
+plt.legend()
 plt.show()
